@@ -1,0 +1,53 @@
+$xs: 0 !default;
+$sm: 576px !default;
+$md: 768px !default;
+$lg: 992px !default;
+$xl: 1200px !default;
+
+//-- Screen Breakpoints
+@mixin media($point) {
+  @if $point == mobile-only {
+    @media (max-width: $md-1) {
+      @content;
+    }
+  }
+
+  @if $point == tablet-only {
+    @media (min-width: $md) and (max-width: $lg) {
+      @content;
+    }
+  }
+
+  @if $point == desktop-only {
+    @media (min-width: $lg) {
+      @content;
+    }
+  }
+
+  @if $point == tablet-up {
+    @media (min-width: $md+1) {
+      @content;
+    }
+  }
+
+
+  @if $point == mobil {
+    @media (max-width: $sm) {
+      @content;
+    }
+  }
+
+  @if $point == tablet {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if $point == web {
+    @media (min-width: $lg) {
+      @content;
+    }
+  } @else if $point == wide {
+    @media (min-width: $xl) {
+      @content;
+    }
+  }
+}
