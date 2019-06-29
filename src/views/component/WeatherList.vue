@@ -1,10 +1,10 @@
 <template>
     <div class="container">
-        <City name="İstanbul"/>
-        <City name="Antalya"/>
-        <City name="İzmir"/>
-        <City name="Ankara"/>
-        <City name="Muğla"/>
+        <City name="Stockholm"/>
+        <City name="Amsterdam"/>
+        <City name="Paris"/>
+        <City name="Oslo"/>
+        <City name="Londra"/>
     </div>
 </template>
 
