@@ -14,7 +14,7 @@ Vue.config.productionTip = false;
 const apiKey='b712b9a9b0785a9842d7c7ba49f37a5f';
 const apiLang='tr';
 const apiUnits='metric';
-const dateName=['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+const dateNames=['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
 
 new Vue({
     data() {
@@ -51,8 +51,8 @@ new Vue({
 
             // Haftanın günlerinin Türkçeye çevirilmesi
             date = new Date(date *1000); // JS TimeStamp convert Ms
-            date = date.getDay();
-            return dateName[date]
+            const currentDay = date.getDay();
+            return dateNames[currentDay]
 
         },
         getNextFiveDays: function () {
