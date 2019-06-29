@@ -1,7 +1,7 @@
 <template>
     <!-- Tıklanan şehir set ediliyor ve active class'ı ekliyoruz-->
-    <div class="city" @click="$root.selectedCity=name" v-bind:class="{ active: $root.selectedCity===name }">
-        <div class="city_wrapper">
+    <div class="city"  @click="$root.selectedCity===name ? $root.selectedCity=null: $root.selectedCity=name" v-bind:class="{ active: $root.selectedCity===name }">
+        <div class="city_wrapper" >
             <div class="city_summary">
                 <div class="city_statusImage"  >
                     <img :src="statusImage" alt="">
@@ -12,7 +12,7 @@
                     <span class="city_windSpeed" v-if="windSpeed > 0">Rüzgar {{windSpeed}} km/s</span>
                 </div>
             </div>
-            <CityDetail :name="name" v-if="$root.selectedCity===name"/>
+            <CityDetail :name="name" v-if="$root.selectedCity===name" />
         </div>
     </div>
 </template>
